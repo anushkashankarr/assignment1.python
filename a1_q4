@@ -1,0 +1,10 @@
+low=int(input())
+high=int(input())
+if(low>=2 and high<=10**6):
+    for i in range(low,high+1):
+        c=0
+        for j in range(1,i):
+            if(i%j==0):
+                c+=1
+        if(c==1):
+            print(i)
