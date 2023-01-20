@@ -1,45 +1,38 @@
-n=input()
+s=int(input())
+n=str(s)
 k=int(input())
-li=[]
-
-for i in n:
-    li.append(i)
+li=list(n)
 len=len(n)
 lol=len-1
-l=[]
-for a in li:
-    l.append(a)
-if(k>=0):
+l=li.copy()
+if(s>=1 and s<10**9 and k>-10**9 and k<10**9):
+    if(k>=0):
+        for i in range(k):
+            for j in range(len):
+                lol=len-1
+                if(j==lol):
+                    l[0]=li[j]
+                else:
+                    l[j+1]=li[j]
+            li=l.copy()
+        for t in l:
+            print(t,end="")
 
-    for i in range(k):
-        c=0
-        for j in li:
-            c+=1
-            x=li.index(j)
-            x1=x+1
-            if(c==len):
-                l[0]=li[x]
-            else:
-                l[x1]=li[x]
-        li.clear()
-        for i in l:
-            li.append(i)
-    for t in l:
-        print(t,end="")
-elif(k<0):
-    k1=abs(k)
-    for i in range(k1):
-        c=0
-        for j in li:
-            c+=1
-            x=li.index(j)
-            x1=x+1
-            if(c==len):
-                l[x]=li[0]
-            else:
-                l[x]=li[x1]
-        li.clear()
-        for i in l:
-            li.append(i)
-    for t in l:
-        print(t,end="")
+    elif(k<0):
+        k1=abs(k)
+        for i in range(k1):
+            for j in range(len):
+                lol=len-1
+                if(j==lol):
+                    l[j]=li[0]
+                else:
+                    l[j]=li[j+1]
+            li=l.copy()
+        for t in l:
+            print(t,end="")
+            li.clear9
+            li=l.copy()
+        for t in l:
+            print(t,end="")
+    else:
+        print(n)
