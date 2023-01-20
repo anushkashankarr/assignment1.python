@@ -1,1 +1,45 @@
+n=input()
+k=int(input())
+li=[]
 
+for i in n:
+    li.append(i)
+len=len(n)
+lol=len-1
+l=[]
+for a in li:
+    l.append(a)
+if(k>=0):
+
+    for i in range(k):
+        c=0
+        for j in li:
+            c+=1
+            x=li.index(j)
+            x1=x+1
+            if(c==len):
+                l[0]=li[x]
+            else:
+                l[x1]=li[x]
+        li.clear()
+        for i in l:
+            li.append(i)
+    for t in l:
+        print(t,end="")
+elif(k<0):
+    k1=abs(k)
+    for i in range(k1):
+        c=0
+        for j in li:
+            c+=1
+            x=li.index(j)
+            x1=x+1
+            if(c==len):
+                l[0]=li[x]
+            else:
+                l[x1]=li[x]
+        li.clear()
+        for i in l:
+            li.append(i)
+    for t in l:
+        print(t,end="")
